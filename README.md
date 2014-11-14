@@ -1,4 +1,4 @@
-# gulp-angular-templatecache
+# gulp-agnitio-templatecache
 
 [![License](http://img.shields.io/badge/license-MIT-blue.svg?style=flat)](https://npmjs.org/package/gulp-angular-templatecache)
 [![NPM version](http://img.shields.io/npm/v/gulp-angular-templatecache.svg?style=flat)](https://npmjs.org/package/gulp-angular-templatecache)
@@ -6,12 +6,12 @@
 [![Build Status](http://img.shields.io/travis/miickel/gulp-angular-templatecache.svg?style=flat)](http://travis-ci.org/miickel/gulp-angular-templatecache)
 [![Dependency Status](http://img.shields.io/gemnasium/miickel/gulp-angular-templatecache.svg?style=flat)](https://gemnasium.com/miickel/gulp-angular-templatecache)
 
-> Concatenates and registers AngularJS templates in the `$templateCache`.
+> Concatenates and registers HTML templates in the `app.cache`.
 
 <a href="#install">Install</a> |
 <a href="#example">Example</a> |
 <a href="#api">API</a> |
-[Releases](https://github.com/miickel/gulp-angular-templatecache/releases) |
+[Releases](https://github.com/miickel/gulp-agnitio-templatecache/releases) |
 <a href="#license">License</a>
 
 ----
@@ -33,42 +33,22 @@ npm install gulp-angular-templatecache --save-dev
 > Concatinate the contents of all .html-files in the templates directory and save to _public/templates.js_ (default filename).
 
 ```js
-var templateCache = require('gulp-angular-templatecache');
+var templateCache = require('gulp-agnitio-templatecache');
 
 gulp.task('default', function () {
-	gulp.src('templates/**/*.html')
+	gulp.src('slides/**/*.html')
 		.pipe(templateCache())
-		.pipe(gulp.dest('public'));
+		.pipe(gulp.dest('templates'));
 });
 ```
 
-**Result (_public/templates.js_)**
+**Result (_templates/templates.js_)**
 
-> Sample output (prettified).
-
-```js
-angular.module("templates").run([$templateCache,
-  function($templateCache) {
-	$templateCache.put("template1.html",
-		// template1.html content (escaped)
-	);
-	$templateCache.put("template2.html",
-		// template2.html content (escaped)
-	);
-	// etc.
-  }
-]);
-
-```
-
-Include this file in your app and AngularJS will use the $templateCache when available.
-
-__Note:__ this plugin will __not__ create a new AngularJS module by default, but use a module called `templates`. If you would like to create a new module, set [options.standalone](https://github.com/miickel/gulp-angular-templatecache#standalone---boolean-standalonefalse) to `true`.
-
+Include this file in your app and Agnitio Accelerator will use the app.cache to load HTML when available.
 
 ## API
 
-gulp-angular-templatecache([filename](https://github.com/miickel/gulp-angular-templatecache#filename---string-filenametemplatesjs), [options](https://github.com/miickel/gulp-angular-templatecache#options))
+gulp-agnitio-templatecache([filename](https://github.com/miickel/gulp-angular-templatecache#filename---string-filenametemplatesjs), [options](https://github.com/miickel/gulp-angular-templatecache#options))
 
 ---- 
 
@@ -81,14 +61,6 @@ gulp-angular-templatecache([filename](https://github.com/miickel/gulp-angular-te
 #### root - {string} [root='']
 
 > Prefix for template URLs.
-
-#### module - {string} [module='templates']
-
-> Name of AngularJS module.
-
-#### standalone - {boolean} [standalone=false]
-
-> Create a new AngularJS module, instead of using an existing.
 
 #### base {string | function} [base=file.base]
 
@@ -103,31 +75,10 @@ gulp-angular-templatecache([filename](https://github.com/miickel/gulp-angular-te
 
 > This plugin uses Semantic Versioning 2.0.0
 
-### 1.1.0 and newer
-
-See [Releases](https://github.com/miickel/gulp-angular-templatecache/releases)
-
 ### 1.0.0
 
-> Cleaner code, more tests and improved documentation. Thoroughly used in development.
-
-- adds
-	- `options.standalone` (**breaking**)
-- fixes
-	- Windows support
-- changes
-	- `filename` now optional
-
-### 0.3.0
-
-- adds
-	- `options.module`
-
-### 0.2.0 and earlier
-
-> Only used by mad men
-
-![](http://media3.giphy.com/media/bAplZhiLAsNnG/giphy.gif)
+- Forked from [gulp-angular-templatecache](https://github.com/miickel/gulp-angular-templatecache)
+- Updated output from Angular to app.cache
 
 
 ## License

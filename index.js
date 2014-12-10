@@ -10,14 +10,14 @@ var htmlJsStr = require('js-string-escape');
  * "constants"
  */
 
-var TEMPLATE_HEADER = 'angular.module("<%= module %>"<%= standalone %>).run(["$templateCache", function($templateCache) {';
-var TEMPLATE_FOOTER = '}]);';
+var TEMPLATE_HEADER = '';
+var TEMPLATE_FOOTER = '';
 var DEFAULT_FILENAME = 'templates.js';
 var DEFAULT_MODULE = 'templates';
 var MODULE_TEMPLATES = {
 
   requirejs: {
-    header: 'define([\'angular\'], function(angular) { \'use strict\'; return ',
+    header: 'define([], function() { \'use strict\'; return ',
     footer: '});'
   },
 
@@ -34,7 +34,7 @@ var MODULE_TEMPLATES = {
 function templateCacheFiles(root, base) {
 
   return function templateCacheFile(file, callback) {
-    var template = '$templateCache.put("<%= url %>","<%= contents %>");';
+    var template = 'app.cache.put("<%= url %>","<%= contents %>");';
     var url;
 
     file.path = path.normalize(file.path);

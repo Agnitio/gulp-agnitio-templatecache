@@ -1,12 +1,12 @@
 {
-  "name": "gulp-angular-templatecache",
-  "version": "1.4.1",
-  "description": "Concatenates and registers AngularJS templates in the $templateCache.",
+  "name": "gulp-agnitio-templatecache",
+  "version": "1.0.0",
+  "description": "Concatenates and registers HTML templates in the app.cache.",
   "main": "index.js",
   "scripts": {
     "test": "mocha"
   },
-  "repository": "miickel/gulp-angular-templatecache",
+  "repository": "agnitio/gulp-agnitio-templatecache",
   "engines": {
     "node": ">=0.8.0"
   },
@@ -16,16 +16,14 @@
   "keywords": [
     "gulpplugin",
     "gulp",
-    "angular",
-    "angularjs",
-    "ng",
+    "agnitio",
     "html2js",
     "templatecache"
   ],
   "author": {
-    "name": "Mickel",
-    "email": "andersson.mickel@gmail.com",
-    "url": "http://mickel.me"
+    "name": "Agnitio",
+    "email": "info@agnitio.com",
+    "url": "http://agnitio.com"
   },
   "license": "MIT",
   "dependencies": {

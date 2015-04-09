@@ -80,7 +80,7 @@ gulp-agnitio-templatecache([filename](https://github.com/agnitio/gulp-agnitio-te
 The MIT License (MIT)
 
 Original work Copyright (c) 2014 [Mickel](http://mickel.me)  
-Modified work Copyright (c) 2014 [Agnitio](http://agnitio.com)
+Modified work Copyright (c) 2015 [Agnitio](http://agnitio.com)
 
 
 Permission is hereby granted, free of charge, to any person obtaining a copy of

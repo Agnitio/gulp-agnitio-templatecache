@@ -36,7 +36,6 @@ function templateCacheFiles(root, base) {
   return function templateCacheFile(file, callback) {
     var template = 'app.cache.put("<%= url %>","<%= contents %>");';
     var url;
-    var prefix = root || path.basename(file.base);
 
     file.path = path.normalize(file.path);
 
@@ -47,7 +46,7 @@ function templateCacheFiles(root, base) {
     if (typeof base === 'function') {
       url = path.join(root, base(file));
     } else {
-      url = path.join(prefix, file.path.replace(base || file.base, ''));
+      url = file.path.replace(file.cwd + '/', '');
     }
 
     /**

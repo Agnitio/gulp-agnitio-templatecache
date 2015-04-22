@@ -1,6 +1,6 @@
 {
   "name": "gulp-agnitio-templatecache",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "Concatenates and registers HTML templates in the app.cache.",
   "main": "index.js",
   "scripts": {

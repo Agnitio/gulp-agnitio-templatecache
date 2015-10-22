@@ -38,6 +38,15 @@ function templateCacheFiles(root, base) {
     var url;
 
     file.path = path.normalize(file.path);
+    
+    /**
+     * Normalize url (win only)
+     */
+    
+    if (process.platform === 'win32') {
+      file.path = file.path.replace(/\\/g, '/');
+      file.cwd = file.cwd.replace(/\\/g, '/');
+    }
 
     /**
      * Rewrite url
@@ -47,14 +56,6 @@ function templateCacheFiles(root, base) {
       url = path.join(root, base(file));
     } else {
       url = file.path.replace(file.cwd + '/', '');
-    }
-
-    /**
-     * Normalize url (win only)
-     */
-
-    if (process.platform === 'win32') {
-      url = url.replace(/\\/g, '/');
     }
 
     /**

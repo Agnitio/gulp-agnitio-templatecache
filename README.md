@@ -69,6 +69,10 @@ gulp-agnitio-templatecache([filename](https://github.com/agnitio/gulp-agnitio-te
 
 > This plugin uses Semantic Versioning 2.0.0
 
+### 1.1.0
+
+- Improved to work properly on Windows as well
+
 ### 1.0.0
 
 - Forked from [gulp-angular-templatecache](https://github.com/miickel/gulp-angular-templatecache)
